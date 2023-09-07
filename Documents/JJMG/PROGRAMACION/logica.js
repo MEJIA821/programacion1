@@ -9,4 +9,5 @@ if (salarioInicial<1300606) {
     ajuste=0
 }
 salarioAjustado=salarioInicial+ajuste;
-alert(salarioAjustado);
+alert("su salario con ajuste es igual a " + salarioAjustado);
+console.log("su salario con ajuste es igual a " + salarioAjustado)
