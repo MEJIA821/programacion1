@@ -1,22 +1,21 @@
-var edad, estadoCivil, estatura, sexo, numeroPersonas, porcentaje, acumularEdad, acumularEstatura, promedioEdad, promedioEstatura;
+var edad, estadoCivil, estatura, sexo, contadorPersonas=0, porcentajeCondicion, acumuladorEdad=0, acumuladorEstatura=0, promedioEdad, promedioEstatura;
 
-for(idpersonas=1;idpersonas<=10; idpersonas++){
-    edad = parseInt(prompt("Ingrese la edad de la persona #" +idpersonas));
-    estadoCivil = parseInt(prompt("Ingrese el estado civil de la persona #"+idpersonas+ ": 1. Soltero 2. casado"));
-    estatura = parseInt(prompt("Ingrese la estatura de la persona #" +idpersonas));
-    sexo = parseInt(prompt("Ingrese el sexo de la persona #" +idpersonas+ ": 1. Hombre 2.Mujer"));
-
-    if ((edad>=18)&&(estadoCivil==1)&&(estatura>=170)&&(sexo==1)) {
-        numeroPersonas=numeroPersonas+1;
-        acumularEdad=acumularEdad+edad;
-        acumularEstatura=acumularEstatura+estatura;
+for(var idPersona=1;idPersona<=10; idPersona++){
+    edad = parseInt(prompt("Ingrese la edad de la persona número "+idPersona));
+    estadoCivil= parseInt(prompt("Ingrese el estado civil de la persona " +idPersona + ": 1.Soltero 2.Casado"))
+    estatura = parseInt(prompt("Ingrese la altura de la persona " +idPersona));
+    sexo = parseInt(prompt("Ingrese el sexo de la persona " +idPersona + "1. Hombre 2. Mujer"));
+    if ((edad>=18)&&(estadoCivil==1)&&(estatura>170)&&(sexo==1)) {
+        contadorPersonas=contadorPersonas+1;
+        acumuladorEdad=acumuladorEdad+edad;
+        acumuladorEstatura=acumuladorEstatura+estatura;
     }
 }
 
-porcentaje=(numeroPersonas/10)*100;
-promedioEdad=acumularEdad/numeroPersonas;
-promedioEstatura=acumularEstatura/numeroPersonas;
+porcentajeCondicion=(contadorPersonas/10)*100;
+promedioEdad=acumuladorEdad/contadorPersonas;
+promedioEstatura=acumuladorEstatura/contadorPersonas;
 
-alert("la cantidad de las personas que cumplen las condiciones es " +porcentaje+ "%");
-alert("el promedio de las personas que cumplen la condicion es " +promedioEdad);
-alert("el promedio de las personas que cumplen la condiion es " +promedioEstatura);
+alert("La cantidad de personas con las condiciones dadas es " +porcentajeCondicion);
+alert("El promedio de edades de las personas que cumplen con la condición es " +promedioEdad);
+alert("El promedio de estaturas de las personas que cumplen con la condición es " +promedioEstatura);
